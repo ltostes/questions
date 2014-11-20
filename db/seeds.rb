@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #{name:, surname:, nickname:}
-users = User.create([{name:"Bruno", surname:"Hashimoto"}])
+users = User.create([{name:"Bruno", surname:"Hashimoto", email:"bhashimoto@poli.ufrj.br", password:"bananatron", password_confirmation:"bananatron"},
+                     {name:"Lucas", surname:"Tostes", email:"lucasrmtostes@gmail.com", password:"bananatron", password_confirmation:"bananatron"}])
 
 #{status:}
 registrations = Registration.create([{status:1, user_id:1, classroom_id:1}])

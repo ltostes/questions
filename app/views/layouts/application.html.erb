@@ -2,28 +2,32 @@
 <html>
 <head>
   <title>Questions</title>
+  
+  <!-- Styles, JS and metadata -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+	
+<!-- Navbar ->
 		</br>
 	<nav class="navbar navbar-default" role="navigation">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle get grouped for better mobile display ->
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
     </div>
   <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tito Labrunie<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= user_signed_in? ? (current_user.name + " " + current_user.surname) : "You are not logged in" %><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Aulas</a></li>
             <li><a href="#">Feed</a></li>
             <li><a href="#">Minha Conta</a></li>
             <li class="divider"></li>
-            <li><a href="#">Sair</a></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </li>
       <a class="navbar-brand" href="#">
@@ -31,6 +35,41 @@
 	</a>
       </ul>
 </nav>
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+          <ul class="nav navbar-nav navbar-right">
+          	<li>
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= user_signed_in? ? (current_user.name + " " + current_user.surname) : "You are not logged in" %></a>
+            </li>
+            <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></a>
+	          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Aulas</a></li>
+            <li><a href="#">Feed</a></li>
+            <li><a href="#">Minha Conta</a></li>
+            <li class="divider"></li>
+          	<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          </ul>
+          </ul>
+
+      </div>
+    </div>
+
+<!-- Alerts -->
+
+<%unless notice.nil?%>
+<div class="alert alert-success" role="alert"> <%= notice %></div>
+<%end%>
+<%unless alert.nil?%>
+<p class="alert"><%= alert %></p>
+<%end%>
 <%= yield %>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container">
+  </div>
+</nav>
 </body>
 </html>
