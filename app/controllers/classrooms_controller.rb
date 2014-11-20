@@ -36,7 +36,7 @@ class ClassroomsController < ApplicationController
     @classroom.destroy
 
     respond_to do |format|
-      format.html { redirect_to classrooms_url, notice "Classroom successfully destroyed."}
+      format.html { redirect_to classrooms_url, notice: "Classroom successfully destroyed."}
     end
   end
 
