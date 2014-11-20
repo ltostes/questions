@@ -1,10 +1,10 @@
 <h1>Suas Aulas</h1>
 <ol class="breadcrumb">
-  <li><a href="">Home</a></li>
+  <li><a href="/">Home</a></li>
   <li class="active">Classes</li>
 </ol>
 <div class="list-group">
   <% @classrooms.zip(@instructors).each do |classroom,instructor| %>
-    <a href= "<%=classroom.id%>" class="list-group-item"><div><b><%= classroom.name %></b></div><div><%=instructor.name %></div></a>
+    <a href= "/classrooms/<%=classroom.id%>" class="list-group-item"><div><b><%= classroom.name %></b></div><div><%=instructor.name %></div></a>
   <% end %>
 </div>

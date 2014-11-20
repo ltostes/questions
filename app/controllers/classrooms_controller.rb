@@ -1,4 +1,6 @@
 class ClassroomsController < ApplicationController
+  before_action :set_classroom, only: [:show, :edit, :update, :destroy]
+  
   def index
     #@classrooms = Classroom.all
     @classrooms = Array.new
@@ -27,7 +29,10 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
-    @classroom = Classroom.find(params[:id])
+    @instructor = @classroom.find_instructor
+    if current_user.id != @instructor.id
+      redirect_to @classroom
+    end
   end
 
   def update
@@ -49,11 +54,14 @@ class ClassroomsController < ApplicationController
   end
 
   def show
-    @classroom = Classroom.find(params[:id])
     @instructor = @classroom.find_instructor
   end
 
   private
+  def set_classroom
+    @classroom = Classroom.find(params[:id])
+  end
+
   def classroom_params
     params.require(:classroom).permit(:name, :description, :verification_code, :beginning, :end)
   end
