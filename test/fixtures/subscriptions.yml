@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+<<<<<<< HEAD
+  user_id: 
+  question_id: 
+
+two:
+  status: 1
+  user_id: 
+  question_id: 
+=======
+
+two:
+  status: 1
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe

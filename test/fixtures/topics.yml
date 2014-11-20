@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+<<<<<<< HEAD
+  title: MyString
+  description: MyText
+  topic_id: 
+  classroom_id: 
+
+two:
+  title: MyString
+  description: MyText
+  topic_id: 
+  classroom_id: 
+=======
+  name: MyString
+  description: MyText
+
+two:
+  name: MyString
+  description: MyText
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe

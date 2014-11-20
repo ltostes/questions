@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+<<<<<<< HEAD
+  beginning: 2014-11-19 23:43:46
+  end: 2014-11-19 23:43:46
+  classroom_id: 
+=======
+  beginning: 2014-11-19 22:46:38
+  end: 2014-11-19 22:46:38
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe
+
+two:
+  name: MyString
+  description: MyText
+<<<<<<< HEAD
+  beginning: 2014-11-19 23:43:46
+  end: 2014-11-19 23:43:46
+  classroom_id: 
+=======
+  beginning: 2014-11-19 22:46:38
+  end: 2014-11-19 22:46:38
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe

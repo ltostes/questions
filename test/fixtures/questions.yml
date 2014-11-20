@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  rank: 1
+  status: 1
+<<<<<<< HEAD
+  topic_id: 
+=======
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe
+
+two:
+  title: MyString
+  description: MyText
+  rank: 1
+  status: 1
+<<<<<<< HEAD
+  topic_id: 
+=======
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe
