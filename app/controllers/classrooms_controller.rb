@@ -1,6 +1,7 @@
 class ClassroomsController < ApplicationController
   def index
-    @classrooms = current_user.classrooms
+    @classrooms = Classroom.all
+    #@classrooms = current_user.classrooms
   end
 
   def new
