@@ -1,0 +1,18 @@
+
+<div class="container">
+<h1> <%= !@user.nickname.nil? ? @user.nickname : (@user.name + " " + @user.surname) %></h1>
+</br>
+<dl class="dl-horizontal">
+  <dt>Nome</dt>
+  <dd><%= @user.name%></dd>
+  </br>
+  <dt>Sobrenome</dt>
+  <dd><%= @user.surname%></dd>
+  </br>
+  <dt>Apelido</dt>
+  <dd><%= @user.nickname.nil? ? "Shii, não tem apelido..." : @user.nickname%></dd>
+  </br>
+  <dt>E-mail</dt>
+  <dd><%= @user.email%></dd>
+</dl>
+</div>

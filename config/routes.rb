@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
   
+  get 'users/show'
+
   devise_for :users
   
-  resources :users, 
-            :classrooms,  
+  resources :classrooms,  
             :events,  
             :subscriptions,  
             :questions,  
             :topics,  
             :answers,
             :notifications
+  
+  get '/users/:id/show', to: 'users#show', as: 'user_path'
   
   root 'welcome#index'
   
