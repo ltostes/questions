@@ -34,7 +34,7 @@
     </nav>
     
 <!-- Alerts -->
-
+<div class="container-fluid">
 <%unless notice.nil?%>
 <div class="alert alert-success" role="alert"> <%= notice %></div>
 <%end%>
@@ -42,7 +42,7 @@
 <p class="alert"><%= alert %></p>
 <%end%>
 <%= yield %>
-
+</div>
 <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
   <div class="container">
   </div>
