@@ -2,7 +2,6 @@ class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
   
   def index
-    #@classrooms = Classroom.all
     @classrooms = Array.new
     @instructors = Array.new
     current_user.registrations.each do |registration|
@@ -40,7 +39,7 @@ class ClassroomsController < ApplicationController
       if @classroom.update(classroom_params)
         format.html {redirect_to @classroom, notice: "Aula atualizada com sucesso."}
       else
-        format.html {redirect_to @edit}
+        format.html {redirect_to :edit}
       end
     end
   end
@@ -55,6 +54,7 @@ class ClassroomsController < ApplicationController
 
   def show
     @instructor = @classroom.find_instructor
+    @topics = @classroom.topics
   end
 
   private

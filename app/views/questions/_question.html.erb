@@ -1,0 +1,15 @@
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><b><%= question.title %></b></div>
+    <div class="panel-body"><%=question.description %></div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    <% if not question.answers.nil? %>
+      <%= render question.answers %>
+    <% else %>
+      <li class="list-group-item">Não há respostas ainda</li>
+    <% end %>
+  </ul>
+</div>
