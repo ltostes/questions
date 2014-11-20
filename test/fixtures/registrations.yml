@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   status: 
   user_id: 
   classroom_id: 
@@ -9,3 +10,9 @@ two:
   status: 
   user_id: 
   classroom_id: 
+=======
+  status: 1
+
+two:
+  status: 1
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe

@@ -3,11 +3,19 @@
 one:
   title: MyString
   description: MyText
+<<<<<<< HEAD
   send_time: 2014-11-19 23:47:30
   classroom_id: 
+=======
+  send_time: 2014-11-19 22:49:26
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe
 
 two:
   title: MyString
   description: MyText
+<<<<<<< HEAD
   send_time: 2014-11-19 23:47:30
   classroom_id: 
+=======
+  send_time: 2014-11-19 22:49:26
+>>>>>>> 673841bb17da53fa5b8e58bf1b4320db0595cdbe
