@@ -11,7 +11,8 @@ users = User.create([{name:"Bruno", surname:"Hashimoto", email:"bhashimoto@poli.
                      {name:"Lucas", surname:"Tostes", email:"lucasrmtostes@gmail.com", password:"bananatron", password_confirmation:"bananatron"}])
 
 #{status:}
-registrations = Registration.create([{status:1, user_id:1, classroom_id:1}])
+registrations = Registration.create([{status:Classroom.student, user_id:1, classroom_id:1},
+                                     {status:Classroom.instructor, user_id:2, classroom_id:1}])
 
 #{name:, description:, beginning:, end:}
 classrooms = Classroom.create([{name:"Cálculo I", description:"Limites, derivadas e ingegrais", beginning:"2014-01-01", end:"2014-12-31", verification_code:"bananahack" }])

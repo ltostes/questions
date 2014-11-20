@@ -1,2 +1,16 @@
 <h1>Classrooms#new</h1>
 <p>Find me in app/views/classrooms/new.html.erb</p>
+
+<%= form_for @classroom, url: classrooms_path do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %></br>
+  <%= form.label :description %>
+  <%= form.text_area :description %></br>
+  <%= form.label :verification_code %>
+  <%= form.text_field :verification_code %></br>
+  <%= form.label :beginning %>
+  <%= form.date_select :beginning %></br>
+  <%= form.label :end %>
+  <%= form.date_select :end %></br>
+  <%= form.submit %> 
+<% end %>
