@@ -18,5 +18,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = params[:questions]
+    @answers = @question.answers
   end
+
 end
