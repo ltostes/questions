@@ -7,7 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>HEY</h1>
+	<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Dúvidas?</a>
+    </div>
+  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tito Labrunie<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Aulas</a></li>
+            <li><a href="#">Feed</a></li>
+            <li><a href="#">Minha Conta</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+        </li>
+        
+      <a class="navbar-brand" href="#">
+	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+	</a>
+      </ul>
+</nav>
 <%= yield %>
 
 </body>
