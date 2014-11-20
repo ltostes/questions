@@ -14,7 +14,7 @@ users = User.create([{name:"Bruno", surname:"Hashimoto", email:"bhashimoto@poli.
 registrations = Registration.create([{status:1, user_id:1, classroom_id:1}])
 
 #{name:, description:, beginning:, end:}
-classrooms = Classroom.create([{name:"Cálculo I", description:"Limites, derivadas e ingegrais", beginning:"2014-01-01", end:"2014-12-31" }])
+classrooms = Classroom.create([{name:"Cálculo I", description:"Limites, derivadas e ingegrais", beginning:"2014-01-01", end:"2014-12-31", verification_code:"bananahack" }])
 
 #{name:, description:, beginning:, end:}
 events = Event.create([{name:"Hackpuc", description:"A maior hackathon do Rio de Janeiro", beginning:"2014-11-19 17:00:00", end:"2014-11-21 12:00:00", classroom_id:1}])

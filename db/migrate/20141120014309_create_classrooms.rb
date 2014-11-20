@@ -3,6 +3,7 @@ class CreateClassrooms < ActiveRecord::Migration
     create_table :classrooms do |t|
       t.string :name
       t.text :description
+      t.string :verification_code
       t.date :beginning
       t.date :end
 

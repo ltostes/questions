@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120133347) do
+ActiveRecord::Schema.define(version: 20141120163916) do
 
   create_table "answers", force: true do |t|
     t.text     "description"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141120133347) do
   create_table "classrooms", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "verification_code"
     t.date     "beginning"
     t.date     "end"
     t.datetime "created_at"
