@@ -5,13 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+		</br>
 	<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Dúvidas?</a>
+      <a class="navbar-brand" href="#"></a>
     </div>
   <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -24,13 +26,11 @@
             <li><a href="#">Sair</a></li>
           </ul>
         </li>
-        
       <a class="navbar-brand" href="#">
 	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 	</a>
       </ul>
 </nav>
 <%= yield %>
-
 </body>
 </html>
