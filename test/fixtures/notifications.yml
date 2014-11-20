@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  send_time: 2014-11-19 23:47:30
+  classroom_id: 
+
+two:
+  title: MyString
+  description: MyText
+  send_time: 2014-11-19 23:47:30
+  classroom_id: 
