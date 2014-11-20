@@ -27,6 +27,7 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
+    @classroom = Classroom.find(params[:id])
   end
 
   def update
