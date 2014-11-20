@@ -1,30 +1,37 @@
 <div class="container-fluid" align="center">
+	<img src="/assets/logo.png" style="width: 200px" alt="Duvidas">
+	<ul class="nav nav-tabs">
+  <li role="presentation" style="width: 50%" class="active"><a href="#">Log in</a></li>
+  <li role="presentation" style="width: 50%"><a href="/users/sign_up">Inscreva-se</a></li>
+</ul>
+
 <div>
 		<h2>Log in</h2>
-		<h6>You need to log in first</h6>
+		<h6>Você precisa estar logado</h6>
 	</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-vertical"}) do |f| %>
+  <div class="form-group">
+    <%= f.label(:email, "Email", class: "control-label") %><br />
+    <%= f.email_field(:email, class: "form-control", style:"max-width: 250px") %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="form-group">
+    <%= f.label(:password, "Senha", class: "control-label") %> <br />
+    <%= f.password_field(:password, class: "form-control", style:"max-width: 250px") %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="form-group">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label(:remember_me, "Lembre-me") %>
     </div>
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", class:"btn btn-default" %>
+      <button type="submit" class="btn btn-default">Entrar</button>
   </div>
+  </br>
 <% end %>
 
 <%= render "devise/shared/links" %>
