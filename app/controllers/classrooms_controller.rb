@@ -1,7 +1,12 @@
 class ClassroomsController < ApplicationController
   def index
-    @classrooms = Classroom.all
-    #@classrooms = current_user.classrooms
+    #@classrooms = Classroom.all
+    @classrooms = Array.new
+    @instructors = Array.new
+    current_user.registrations.each do |registration|
+      @classrooms.push(registration.classroom)
+      @instructors.push(registration.classroom.find_instructor)
+    end
   end
 
   def new
@@ -13,7 +18,8 @@ class ClassroomsController < ApplicationController
     
     respond_to do |format|
       if @classroom.save
-        format.html {redirect_to @classroom, notice: "Classroom was successfully created."}
+        Registration.create(user_id:current_user.id, classroom_id:@classroom.id, status:Classroom.instructor)
+        format.html {redirect_to @classroom, notice: "Aula criada com sucesso."}
       else
         format.html {render 'new'}
       end
@@ -26,7 +32,7 @@ class ClassroomsController < ApplicationController
   def update
     respond_to do |format|
       if @classroom.update(classroom_params)
-        format.html {redirect_to @classroom, notice: "Classroom was successfully updated."}
+        format.html {redirect_to @classroom, notice: "Aula atualizada com sucesso."}
       else
         format.html {redirect_to @edit}
       end
@@ -42,6 +48,8 @@ class ClassroomsController < ApplicationController
   end
 
   def show
+    @classroom = Classroom.find(params[:id])
+    @instructor = @classroom.find_instructor
   end
 
   private

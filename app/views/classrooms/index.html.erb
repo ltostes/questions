@@ -1,2 +1,7 @@
-<h1>Classrooms#index</h1>
-<p>Find me in app/views/classrooms/index.html.erb</p>
+<h1>Suas Aulas</h1>
+
+<div class="list-group">
+  <% @classrooms.zip(@instructors).each do |classroom,instructor| %>
+    <a href= "classrooms/<%=classroom.id%>" class="list-group-item"><div><b><%= classroom.name %></b></div><div><%=instructor.name %></div></a>
+  <% end %>
+</div>
