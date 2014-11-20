@@ -1,29 +1,83 @@
-<h2>Sign up</h2>
+<h2>Inscreva-se</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="form-group">
+  	<%= f.label(:name, "Nome", class: "col-sm-2 control-label") %>
+    <div class="col-sm-4">
+    <%= f.text_field(:name, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  
+  <div class="form-group">
+  	<%= f.label(:surname, "Sobrenome", class: "col-sm-2 control-label") %> 
+    <div class="col-sm-4">
+    <%= f.text_field(:surname, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  
+  
+  <div class="form-group">
+  	<%= f.label(:nickname, "Apelido", class: "col-sm-2 control-label") %> 
+  	
+    <div class="col-sm-4">
+    <%= f.text_field(:nickname, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  
+  <div class="form-group">
+  	<%= f.label(:email, "Email", class: "col-sm-2 control-label") %> 
+  	
+    <div class="col-sm-4">
+    <%= f.email_field(:email, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
   </div>
+  
+  
+  <div class="form-group">
+  	<%= f.label(:password, "Senha", class: "col-sm-2 control-label") %> 
+  	
+    <div class="col-sm-4">
+    <%= f.password_field(:password, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    	<span id="helpBlock" class="help-block">
+    	<i>Deve ter ao menos 8 caracteres</i>
+    	</span>
+    </div>
+  </div>
+  
+  <div class="form-group">
+  	<%= f.label(:password_confirmation, "Confirme a senha", class: "col-sm-2 control-label") %> 
+  	
+    <div class="col-sm-4">
+    <%= f.password_field(:password_confirmation, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    	<span id="helpBlock" class="help-block">
+    	<i>Por favor, confirme a sua senha</i>
+    	</span>
+    </div>
+  </div>
+  
+  </div>
+<div class="row">
+	<div class="col-sm-offset-1 col-sm-1" >
+		<%= button_to "Voltar", :back, class:"btn btn-default" %>
+	</div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-default">Inscrever-se</button>
+    </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
