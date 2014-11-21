@@ -1,6 +1,10 @@
 class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
   
+  before_action :authenticate_user!, only: [:new_registration, :new, :create, :edit, :update, :destroy]
+  
+  before_action :regs_params, only: [:register]
+  
   def index
     @classrooms = Array.new
     @instructors = Array.new
@@ -57,6 +61,34 @@ class ClassroomsController < ApplicationController
     @topics = @classroom.topics
   end
 
+  def new_registration
+    @registration = Registration.new
+  end
+  
+  def register
+    instructor = User.where(@us).first
+    croom = Classroom.where(@cls).first
+    
+    
+    respond_to do |format|
+      
+      if croom.nil?
+        format.html {redirect_to classrooms_url, notice: "Código de aula inválido"}
+      elsif instructor.nil?
+        format.html {redirect_to classrooms_url, notice: "Email de professor inválido"}
+      elsif !(croom.find_instructor == instructor)
+        format.html {redirect_to classrooms_url, notice: "Combinação de Email e Código inválido"}
+      elsif (instructor == current_user)
+        format.html {redirect_to classrooms_url, notice: "Você não pode se inscrever como aluno em uma aula sua!"}
+      elsif !(Registration.where(user:current_user, classroom:croom).first.nil?)
+        format.html {redirect_to classrooms_url, notice: "Você já se inscreveu nesta aula!"}
+      else
+      Registration.create(user:current_user, classroom:croom, status:Classroom.student)
+      format.html {redirect_to classrooms_url, notice: "Inscrição feita com sucesso!"}  
+      end
+    end
+  end
+
   private
   def set_classroom
     @classroom = Classroom.find(params[:id])
@@ -64,5 +96,10 @@ class ClassroomsController < ApplicationController
 
   def classroom_params
     params.require(:classroom).permit(:name, :description, :verification_code, :beginning, :end)
+  end
+  
+  def regs_params
+      @cls = params.require(:classroom).permit(:verification_code)
+      @us = params.require(:user).permit(:email)
   end
 end

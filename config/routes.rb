@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   
   get '/users/:id/show', to: 'users#show', as: 'user'
   
+  get '/classroom/apply', to: 'classrooms#new_registration'
+  
+  post '/classroom/register', to: 'classrooms#register', as: 'registry'
+  
   root 'welcome#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

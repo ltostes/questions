@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<div class="row">
+	<div class="col-sm-2 col-sm-offset-2">
+		<h1>Ingressar</h1>
+	</div>
+</div>
+</br>
+
+<%= form_for(@registration, url: registry_path(@registration), html: { class: "form-horizontal" }) do |f| %>
+
+	<%= fields_for :classroom, @registration.classroom do |cs|%>
+		
+		  <div class="form-group">
+		  	<%= cs.label(:verification_code, "Código", class: "col-sm-2 control-label") %>
+		    <div class="col-sm-4">
+		    <%= cs.text_field(:verification_code, class: "form-control") %>
+		    </div>
+		    <div class="col-sm-6">
+		    </div>
+		  </div>
+	
+	<%end%>
+		  
+	<%= fields_for :user do |ins|%>
+	
+		  <div class="form-group">
+		  	<%= ins.label(:email, "Email do Professor", class: "col-sm-2 control-label") %>
+		    <div class="col-sm-4">
+		    <%= ins.email_field(:email, class: "form-control") %>
+		    </div>
+		    <div class="col-sm-6">
+		    </div>
+		  </div>
+		  
+	<%end %>
+	
+	<div class="col-sm-2" align="right">
+		<%= button_to "Voltar", :back, class:"btn btn-default" %>
+	</div>
+
+    <div class="col-sm-2" align="left">
+      <button type="submit" class="btn btn-default">Inscrever-se</button>
+    </div>
+  </div>
+  
+<%end%>
