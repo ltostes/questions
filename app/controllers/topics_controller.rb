@@ -66,6 +66,8 @@ class TopicsController < ApplicationController
   def show
     @questions = @topic.questions
     @topics = Topic.where(parent_topic_id: @topic.id)
+    flash[:topic_id] = @topic.id
+    @answer = Answer.new
   end
 
   private
