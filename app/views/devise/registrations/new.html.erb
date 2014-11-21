@@ -8,10 +8,11 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
   <%= devise_error_messages! %>
 
+	</br>
   <div class="form-group">
   	<%= f.label(:name, "Nome", class: "col-sm-2 control-label") %>
     <div class="col-sm-4">
-    <%= f.text_field(:name, class: "form-control") %>
+    <%= f.text_field(:name, class: "form-control", placeholder: "Primeiro nome") %>
     </div>
     <div class="col-sm-6">
     </div>
@@ -20,7 +21,7 @@
   <div class="form-group">
   	<%= f.label(:surname, "Sobrenome", class: "col-sm-2 control-label") %> 
     <div class="col-sm-4">
-    <%= f.text_field(:surname, class: "form-control") %>
+    <%= f.text_field(:surname, class: "form-control", placeholder: "Qualquer sobrenome") %>
     </div>
     <div class="col-sm-6">
     </div>
@@ -31,7 +32,7 @@
   	<%= f.label(:nickname, "Apelido", class: "col-sm-2 control-label") %> 
   	
     <div class="col-sm-4">
-    <%= f.text_field(:nickname, class: "form-control") %>
+    <%= f.text_field(:nickname, class: "form-control", placeholder: "Apelido (opcional)") %>
     </div>
     <div class="col-sm-6">
     </div>
@@ -41,7 +42,7 @@
   	<%= f.label(:email, "Email", class: "col-sm-2 control-label") %> 
   	
     <div class="col-sm-4">
-    <%= f.email_field(:email, class: "form-control") %>
+    <%= f.email_field(:email, class: "form-control", placeholder: "Endereço de email") %>
     </div>
     <div class="col-sm-6">
     </div>
@@ -52,12 +53,7 @@
   	<%= f.label(:password, "Senha", class: "col-sm-2 control-label") %> 
   	
     <div class="col-sm-4">
-    <%= f.password_field(:password, class: "form-control") %>
-    </div>
-    <div class="col-sm-6">
-    	<span id="helpBlock" class="help-block">
-    	<i>Deve ter ao menos 8 caracteres</i>
-    	</span>
+    <%= f.password_field(:password, class: "form-control", placeholder: "Mínimo de 8 caracteres") %>
     </div>
   </div>
   
@@ -65,21 +61,17 @@
   	<%= f.label(:password_confirmation, "Confirme a senha", class: "col-sm-2 control-label") %> 
   	
     <div class="col-sm-4">
-    <%= f.password_field(:password_confirmation, class: "form-control") %>
-    </div>
-    <div class="col-sm-6">
-    	<span id="helpBlock" class="help-block">
-    	<i>Por favor, confirme a sua senha</i>
-    	</span>
+    <%= f.password_field(:password_confirmation, class: "form-control", placeholder: "Confirme sua senha") %>
     </div>
   </div>
-  
+  </br>
   </div>
-<div class="row">
-    <div class="col-sm-offset-2 col-sm-2">
-    	<%= f.submit "Inscrever-se", class: "btn btn-default"%>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-2">
+        <%= f.submit "Inscrever-se", class: "btn btn-danger"%>
+      </div>
     </div>
-</div>
-<% end %>
+  </div>
+  <% end %>
 </div>
 
