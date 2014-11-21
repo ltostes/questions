@@ -12,7 +12,7 @@ Rails.application.routes.draw do
             :answers,
             :notifications
   
-  get '/users/:id/show', to: 'users#show', as: 'user_path'
+  get '/users/:id/show', to: 'users#show', as: 'user'
   
   root 'welcome#index'
   
