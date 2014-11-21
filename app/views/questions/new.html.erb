@@ -1,2 +1,26 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<h1>Nova Pergunta</h1>
+
+<%= form_for @question, url: questions_path, html: {class: "form-horizontal"} do |form| %>
+  <div class="form-group">
+    <%= form.label(:title, "Título", class: "col-sm-2 control-label")%>
+    <div class="col-sm-4">
+      <%= form.text_field(:title, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label(:description, "Detalhes", class: "col-sm-2 control-label")%>
+    <div class="col-sm-4">
+      <%= form.text_area(:description, class: "form-control") %>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+  
+  <div class="col-sm-2">
+    <button type="submit"class="btn btn-default">Enviar</button>
+  </div>
+
+<% end %>

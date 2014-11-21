@@ -11,5 +11,7 @@
     <% else %>
       <li class="list-group-item">Não há respostas ainda</li>
     <% end %>
+    <% @question = question %>
+    <%= render 'answers/new', :question_id => @question.id%>
   </ul>
 </div>

@@ -1,6 +1,13 @@
 <div class="list-group">
   <%= render @topics %>
 </div>
+
+<div>
+  <p>
+    <%= button_to "Nova Pergunta", new_question_path, class: "btn btn-primary" %>
+  </p>  
+</div>
+
 <div class="list-group">
   <% if not @questions.nil? %>
     <%= render @questions, :questions => @questions %>

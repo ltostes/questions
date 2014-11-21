@@ -1,0 +1,5 @@
+<%= form_for @answer do |form| %>
+  <%= form.label :description %>
+  <%= form.text_area :description, :placeholder => 'Sua resposta...' %>
+  <%= form.submit %>
+<% end %>

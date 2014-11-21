@@ -13,7 +13,8 @@ Rails.application.routes.draw do
             :notifications
   
   get '/users/:id/show', to: 'users#show', as: 'user_path'
-  
+  post '/questions/new'
+  post '/answers/new'
   root 'welcome#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
