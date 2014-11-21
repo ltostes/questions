@@ -23,7 +23,12 @@ Rails.application.routes.draw do
   post '/answers/new'
   
   root 'welcome#index'
-  
+
+  get 'questions/rank_up'
+  post 'questions/rank_up'
+  get 'questions/rank_down'
+  post 'questions/rank_down'
+  post 'questions/_show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,7 +2,18 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading"><b><%= question.title %></b></div>
-    <div class="panel-body"><%=question.description %></div>
+  <div class="panel-body" style="background-color:#b9b7b7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10"><%= question.description %></div>
+        <div class="col-md-1" align="right"><%= question.rank %></div>
+        <div class="col-md-1" align="right">
+          <button type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></button> 
+          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button> 
+        </div>  
+      </div>
+    </div>
+  </div>
 
   <!-- List group -->
   <ul class="list-group">
