@@ -13,11 +13,12 @@
 	
 <!-- Navigation Bar -->
 
-    <nav class="navbar">
+    <nav class="navbar navbar-fixed-top" style="margin-top: 15px">
+	<div class="titobaca"> </div>
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="glyphicon glyphicon-cog">                      
+            <span class="glyphicon glyphicon-cog" style="">                      
           </button>
           <a class="navbar-brand" rel="home" href="#" title="Dúvidas?">
         	<img style="max-width:100px; margin-top: -7px;"
@@ -33,17 +34,17 @@
       </div>
     </nav>
     
-<!-- Alerts -->
 <div class="container-fluid">
+<!-- Alerts --> <!--
 <%unless notice.nil?%>
 <div class="alert alert-success" role="alert"> <%= notice %></div>
 <%end%>
 <%unless alert.nil?%>
 <p class="alert"><%= alert %></p>
-<%end%>
+<%end%> -->
 <%= yield %>
 </div>
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-fixed-bottom" role="navigation">
   <div class="container">
   </div>
 </nav>

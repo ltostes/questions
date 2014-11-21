@@ -1,14 +1,11 @@
 <div class="container-fluid" align="center">
 	<img src="/assets/logo.png" style="width: 200px" alt="Duvidas">
 	<ul class="nav nav-tabs">
-  <li role="presentation" style="width: 50%" class="active"><a href="#">Log in</a></li>
+  <li role="presentation" style="width: 50%" class="active"><a href="#">Login</a></li>
   <li role="presentation" style="width: 50%"><a href="/users/sign_up">Inscreva-se</a></li>
 </ul>
 
-<div>
-		<h2>Log in</h2>
-		<h6>Você precisa estar logado</h6>
-	</div>
+</br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-vertical"}) do |f| %>
   <div class="form-group">
