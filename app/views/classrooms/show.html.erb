@@ -4,6 +4,7 @@
   <%=@classroom.description %></br>
   <% if current_user.id == @instructor.id %>
     <%= link_to "Editar", :action => 'edit', :html => {class: "btn btn-primary"} %>
+    <%= link_to "Novo tópico", :controller => 'topics', :action => 'new', :classroom_id => @classroom.id, :html => {class: "btn btn-primary"} %>
   <% end %>
 </div>
 <div class="list-group">

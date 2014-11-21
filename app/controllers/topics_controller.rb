@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
-    classroom_id = params[:classroom_id]
+    classroom_id = params[:topic][:classroom_id]
     parent_topic_id = params[:parent_topic_id]
 
     respond_to do |format|
@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
         else # The new topic is under another topic
           @topic.update(classroom_id: nil, parent_topic_id: parent_topic_id)
         end
-        format.html { render @topic, notice: "Tópico criado com sucesso." }
+        format.html { redirect_to @topic, notice: "Tópico criado com sucesso." }
       else
         format.html { render 'new'}
       end

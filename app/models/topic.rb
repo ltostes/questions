@@ -5,7 +5,7 @@ class Topic < ActiveRecord::Base
   has_many :child_topics, :class_name => "Topic", :foreign_key => "parent_topic_id"
   has_many :questions
 
-  def self.find_root
+  def find_root
     if :classroom_id.nil?
       return Topic.find(parent_topic_id).find_root
     else
