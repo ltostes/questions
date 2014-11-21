@@ -1,17 +1,17 @@
-<h1>Suas Aulas</h1>
+<%= render 'header'%>
 <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   <li class="active">Classes</li>
 </ol>
 <div class="list-group">
   <% @classrooms.zip(@instructors).each do |classroom,instructor| %>
-    <a href= "/classrooms/<%=classroom.id%>" class="list-group-item"><div><b><%= classroom.name %></b></div><div><%=instructor.name %></div></a>
+    <a href= "/classrooms/<%=classroom.id%>" class="list-group-item"><div><b><%= classroom.name %></b></div><div><%=instructor.name + " " + instructor.surname %></div></a>
   <% end %>
 </div>
 <div class="row">
-	<div class="col-sm-1">
-		<%= link_to ""%>
-		
-		<a class="btn btn-primary" href="/classroom/apply">Adicionar aula <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+	<div class="col-sm-6">
+		<a class="btn btn-primary" href="/classroom/apply">Ingressar em aula <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+   
+		<a class="btn btn-success" href="/classrooms/new">Ministrar nova aula <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" align="right"></span></a>
 	</div>
 </div>

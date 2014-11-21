@@ -21,12 +21,13 @@
             <span class="glyphicon glyphicon-cog" style="">                      
           </button>
           <a class="navbar-brand" rel="home" href="#" title="Dúvidas?">
-        	<img style="max-width:100px; margin-top: -7px;"
-             src="/assets/logo_nav.png">
+        	<img style="max-width:100px; margin-top: -7px;" src="/assets/logo_nav.png">
    		 </a>
     	</div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
+          	<li><a href="/classrooms">Minhas Aulas</a></li>
+          	<li><a href="/questions">Minhas Dúvidas</a></li>
             <li><%= user_signed_in? ? (link_to((current_user.name + " " + current_user.surname), current_user)) : link_to("Você não está logado", new_user_session_path) %></li>
             <li><%= user_signed_in? ? link_to('Logout', destroy_user_session_path, :method => :delete) : link_to('Login', new_user_session_path) %></li>
           </ul>

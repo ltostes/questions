@@ -1,12 +1,11 @@
 <div class="jumbotron">
   <h1><%= @classroom.name %></h1>
-  <h2>Professor: <%= @instructor.name %></h2>
+  <h2>Professor: <%= @instructor.name + " " + @instructor.surname %></h2>
   <%=@classroom.description %></br>
   <% if current_user.id == @instructor.id %>
-    <%= link_to "Editar", :action => 'edit' %>
+    <%= link_to "Editar", :action => 'edit', :html => {class: "btn btn-primary"} %>
   <% end %>
 </div>
-
 <div class="list-group">
   <%= render @topics %>
 </div>
