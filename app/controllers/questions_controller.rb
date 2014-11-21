@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   
   def index
     topic_id = params[:topic_id]
-    @questions = Question.where(topic_id: topic_id)
+    @questions = Question.where(topic_id: topic_id).order(rank: :desc)
   end
 
   def new
@@ -60,10 +60,56 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @answers = @question.answers
+    @answers = @question.answers.order(rank: :desc)
     flash[:question_id] = @question.id
   end
-  
+ 
+  def rank_up
+    @question = Question.find(params[:question_id])
+    case current_user.id
+    # user is the author of the question
+    when @question.find_author.id
+      case @question.status
+      when Question.open
+        @question.update(status: Question.author_approved)
+      when Question.instructor_approved
+        @question.update(status: Question.both_approved)
+      else
+      end
+    # User is the instructor
+    when @question.topic.find_root.find_instructor
+      case @question.status
+      when Question.open
+        @question.update(status: Question.instructoror_approved)
+      when Question.author_approved
+        @question.update(status: Question.both_approved)
+      else
+      end
+    # User is someone else
+    else
+      @question.update(rank: :rank+1)
+    end
+    redirect_to @question
+  end
+
+  def rank_down
+    case current_user.id
+    # User is the instructor
+    when @question.topic.find_root.find_instructor
+      case @question.status
+      when Question.open
+        @question.update(status: Question.instructoror_approved)
+      when Question.author_approved
+        @question.update(status: Question.both_approved)
+      else
+      end
+    # User is someone else
+    else
+      @question.update(rank: :rank - 1)
+    end
+    render @question
+  end
+
   private
   def set_question
     @question = Question.find(params[:id])

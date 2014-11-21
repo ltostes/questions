@@ -1,1 +1,12 @@
-<li class="list-group-item"><%= answer.description %></li>
+<li class="list-group-item">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10"><%= answer.description %></div>
+      <div class="col-md-1" align="right"><%= answer.rank %></div>
+      <div class="col-md-1" align="right">
+        <button type="button" class="btn btn-default" ><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></button> 
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button> 
+      </div>
+    </div>
+  </div>
+</li>

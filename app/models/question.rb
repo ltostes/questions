@@ -7,7 +7,7 @@ class Question < ActiveRecord::Base
     0
   end
 
-  def self.owner_approved
+  def self.author_approved
     1
   end
 
@@ -21,5 +21,9 @@ class Question < ActiveRecord::Base
 
   def self.instructor_flagged
     4
+  end
+
+  def find_author
+    return self.subscriptions.find_by(status: Subscription.author).user 
   end
 end
